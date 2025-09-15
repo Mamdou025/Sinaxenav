@@ -87,7 +87,7 @@ export default function StripeLikeNavbarDemo() {
                     key={item.label}
                     ref={(el) => (itemRefs.current[i] = el)}
                     onMouseEnter={() => handleEnterItem(i)}
-                    className={`relative rounded-xl px-3 py-2 text-sm font-medium transition hover:text-slate-900 ${
+                    className={`relative rounded-xl px-3 py-2 text-sm font-bold transition hover:text-slate-900 ${
                       active === i ? "text-slate-900" : "text-slate-600 hover:bg-slate-100"
                     }`}
                   >
@@ -106,9 +106,9 @@ export default function StripeLikeNavbarDemo() {
                 ))}
               </div>
               <div className="ml-auto flex items-center gap-2">
-                <a href="#" className="text-sm text-slate-600 hover:text-slate-900">Docs</a>
-                <a href="#" className="text-sm text-slate-600 hover:text-slate-900">Pricing</a>
-                <a href="#" className="rounded-xl border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-900 hover:text-white transition">Sign in</a>
+                <a href="#" className="text-sm font-bold text-slate-600 hover:text-slate-900">Docs</a>
+                <a href="#" className="text-sm font-bold text-slate-600 hover:text-slate-900">Pricing</a>
+                <a href="#" className="rounded-xl border border-slate-300 px-3 py-1.5 text-sm font-bold hover:bg-slate-900 hover:text-white transition">Sign in</a>
               </div>
             </nav>
 

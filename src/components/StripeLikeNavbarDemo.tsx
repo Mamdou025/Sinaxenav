@@ -63,6 +63,33 @@ export default function StripeLikeNavbarDemo() {
   }, [active, open]);
 
   const ActivePanel = useMemo(() => (active != null ? MENU[active].Panel : null), [active]);
+  const SERVICES = [
+    {
+      title: "Dashboards",
+      description: "Custom visualizations that put your metrics front and center.",
+      color: "border-t-sky-500",
+    },
+    {
+      title: "Data Engineering",
+      description: "Reliable pipelines to collect, clean, and deliver your data.",
+      color: "border-t-green-500",
+    },
+    {
+      title: "Data Science",
+      description: "Models and experiments that drive smarter decisions.",
+      color: "border-t-amber-500",
+    },
+    {
+      title: "IT Services",
+      description: "Infrastructure and support to keep your systems running.",
+      color: "border-t-purple-500",
+    },
+    {
+      title: "Research",
+      description: "Insightful analysis to explore new opportunities.",
+      color: "border-t-rose-500",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -86,7 +113,7 @@ export default function StripeLikeNavbarDemo() {
                     key={item.label}
                     ref={(el) => (itemRefs.current[i] = el)}
                     onMouseEnter={() => handleEnterItem(i)}
-                    className={`relative rounded-xl px-4 py-3 text-base font-medium transition hover:text-slate-900 ${
+                    className={`relative rounded-xl px-4 py-3 text-base font-bold transition hover:text-slate-900 ${
                       active === i ? "text-slate-900" : "text-slate-600 hover:bg-slate-100"
                     }`}
                   >
@@ -105,9 +132,9 @@ export default function StripeLikeNavbarDemo() {
                 ))}
               </div>
               <div className="ml-auto flex items-center gap-2">
-                <a href="#" className="text-base text-slate-600 hover:text-slate-900">Docs</a>
-                <a href="#" className="text-base text-slate-600 hover:text-slate-900">Pricing</a>
-                <a href="#" className="rounded-xl border border-slate-300 px-4 py-2 text-base font-medium hover:bg-slate-900 hover:text-white transition">Sign in</a>
+                <a href="#" className="text-base font-bold text-slate-600 hover:text-slate-900">Docs</a>
+                <a href="#" className="text-base font-bold text-slate-600 hover:text-slate-900">Pricing</a>
+                <a href="#" className="rounded-xl border border-slate-300 px-4 py-2 text-base font-bold hover:bg-slate-900 hover:text-white transition">Sign in</a>
               </div>
             </nav>
 
@@ -151,21 +178,40 @@ export default function StripeLikeNavbarDemo() {
         </div>
       </header>
 
-      {/* Filler page content so you can scroll */}
       <main className="mx-auto max-w-6xl px-6 py-16">
-        <h1 className="text-4xl font-bold tracking-tight">Stripe‑style morphing navbar demo</h1>
-        <p className="mt-3 text-lg text-slate-600 max-w-2xl">
-          Hover the navigation items above. Notice how a single dropdown morphs its size and the caret tracks the hovered item. Panels have different dimensions to demonstrate fluid resizing.
-        </p>
-        <div className="mt-10 grid grid-cols-2 gap-6">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="h-24 rounded-xl bg-slate-100" />
-              <div className="mt-4 h-3 w-2/3 rounded bg-slate-200" />
-              <div className="mt-2 h-3 w-1/2 rounded bg-slate-200" />
-            </div>
-          ))}
-        </div>
+        <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white px-8 py-20 text-center shadow-sm">
+          <span className="pointer-events-none absolute -top-8 -left-8 h-32 w-32 rounded-full bg-sky-100" />
+          <span className="pointer-events-none absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-rose-100" />
+          <h1 className="relative text-5xl font-extrabold tracking-tight">
+            Data Microservices, Simplified
+          </h1>
+          <p className="relative mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+            We build dashboards, pipelines, and intelligent solutions to transform your data into insights.
+          </p>
+          <div className="relative mt-8">
+            <a
+              href="#"
+              className="inline-block rounded-lg bg-slate-900 px-6 py-3 text-base font-bold text-white transition hover:bg-slate-700"
+            >
+              Get Started
+            </a>
+          </div>
+        </section>
+
+        <section className="mt-24">
+          <h2 className="text-center text-3xl font-bold">Our Services</h2>
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((s) => (
+              <div
+                key={s.title}
+                className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-sm border-t-4 ${s.color}`}
+              >
+                <h3 className="text-xl font-bold">{s.title}</h3>
+                <p className="mt-2 text-slate-600">{s.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
     </div>
   );

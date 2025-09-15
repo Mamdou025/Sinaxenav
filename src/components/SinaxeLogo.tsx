@@ -9,9 +9,9 @@ export default function SinaxeLogo({ className = "h-6 w-6" }: { className?: stri
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
     >
-      <rect x="8" y="4" width="32" height="10" rx="2.5" fill="#22C55E" />
-      <rect x="8" y="19" width="32" height="10" rx="2.5" fill="#2563EB" />
-      <rect x="8" y="34" width="32" height="10" rx="2.5" fill="#EF4444" />
+      <rect x="4" y="8" width="10" height="32" rx="2.5" fill="#22C55E" />
+      <rect x="19" y="8" width="10" height="32" rx="2.5" fill="#2563EB" />
+      <rect x="34" y="8" width="10" height="32" rx="2.5" fill="#EF4444" />
     </svg>
   );
 }

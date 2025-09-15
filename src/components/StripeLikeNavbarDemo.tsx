@@ -77,7 +77,8 @@ export default function StripeLikeNavbarDemo() {
             {/* Navbar row */}
             <nav className="flex h-16 items-center gap-6">
               <a href="#" className="flex items-center gap-2" aria-label="Sinaxe">
-                <SinaxeLogo className="h-8 w-8" />
+                <SinaxeLogo className="w-32 h-auto" /> 
+
                 <span className="sr-only">Sinaxe</span>
               </a>
               <div className="flex items-center gap-2">
@@ -86,12 +87,12 @@ export default function StripeLikeNavbarDemo() {
                     key={item.label}
                     ref={(el) => (itemRefs.current[i] = el)}
                     onMouseEnter={() => handleEnterItem(i)}
-                    className={`relative rounded-xl px-4 py-3 text-base font-medium transition hover:text-slate-900 ${
+                    className={`relative rounded-xl px-3 py-2 text-sm font-medium transition hover:text-slate-900 ${
                       active === i ? "text-slate-900" : "text-slate-600 hover:bg-slate-100"
                     }`}
                   >
                     <span className="flex items-center gap-2">
-                      <item.Icon className="h-5 w-5 text-black" />
+                      <item.Icon className="h-4 w-4 text-black" />
                       <span>{item.label}</span>
                     </span>
                     {active === i && (
@@ -105,9 +106,9 @@ export default function StripeLikeNavbarDemo() {
                 ))}
               </div>
               <div className="ml-auto flex items-center gap-2">
-                <a href="#" className="text-base text-slate-600 hover:text-slate-900">Docs</a>
-                <a href="#" className="text-base text-slate-600 hover:text-slate-900">Pricing</a>
-                <a href="#" className="rounded-xl border border-slate-300 px-4 py-2 text-base font-medium hover:bg-slate-900 hover:text-white transition">Sign in</a>
+                <a href="#" className="text-sm text-slate-600 hover:text-slate-900">Docs</a>
+                <a href="#" className="text-sm text-slate-600 hover:text-slate-900">Pricing</a>
+                <a href="#" className="rounded-xl border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-900 hover:text-white transition">Sign in</a>
               </div>
             </nav>
 
@@ -153,8 +154,8 @@ export default function StripeLikeNavbarDemo() {
 
       {/* Filler page content so you can scroll */}
       <main className="mx-auto max-w-6xl px-6 py-16">
-        <h1 className="text-4xl font-bold tracking-tight">Stripe‑style morphing navbar demo</h1>
-        <p className="mt-3 text-lg text-slate-600 max-w-2xl">
+        <h1 className="text-3xl font-bold tracking-tight">Stripe‑style morphing navbar demo</h1>
+        <p className="mt-3 text-slate-600 max-w-2xl">
           Hover the navigation items above. Notice how a single dropdown morphs its size and the caret tracks the hovered item. Panels have different dimensions to demonstrate fluid resizing.
         </p>
         <div className="mt-10 grid grid-cols-2 gap-6">

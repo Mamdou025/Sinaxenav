@@ -6,7 +6,7 @@ export default function DevelopersPanel() {
     <div className="w-[680px]">
       <div className="grid grid-cols-3 gap-6">
         <div className="col-span-2">
-          <div className="text-sm font-semibold mb-2">Docs &amp; SDKs</div>
+          <div className="text-base font-semibold mb-2">Docs &amp; SDKs</div>
           <div className="grid grid-cols-2 gap-3">
             {[
               { t: "API Reference", icon: "api" },
@@ -16,16 +16,16 @@ export default function DevelopersPanel() {
               { t: "Stripe.js", icon: "stripejs" },
               { t: "Mobile SDKs", icon: "mobile" }
             ].map((x) => (
-              <a key={x.t} href="#" className="flex items-center gap-3 rounded-lg border border-slate-200 px-4 py-3 hover:bg-slate-50 hover:border-slate-300 transition text-sm">
-                <Icon name={x.icon} className="h-5 w-5 text-black" />
+              <a key={x.t} href="#" className="flex items-center gap-3 rounded-lg border border-slate-200 px-4 py-3 hover:bg-slate-50 hover:border-slate-300 transition text-base">
+                <Icon name={x.icon} className="h-6 w-6 text-black" />
                 <span>{x.t}</span>
               </a>
             ))}
           </div>
         </div>
         <div className="col-span-1">
-          <div className="text-sm font-semibold mb-2">Resources</div>
-          <ul className="space-y-2 text-sm">
+          <div className="text-base font-semibold mb-2">Resources</div>
+          <ul className="space-y-2 text-base">
             {[
               { t: "Changelog", icon: "changelog" },
               { t: "Status", icon: "status" },
@@ -34,7 +34,7 @@ export default function DevelopersPanel() {
             ].map((x) => (
               <li key={x.t}>
                 <a href="#" className="flex items-center gap-3 hover:underline">
-                  <Icon name={x.icon} className="h-4 w-4 text-black" />
+                  <Icon name={x.icon} className="h-5 w-5 text-black" />
                   <span>{x.t}</span>
                 </a>
               </li>

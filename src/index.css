@@ -43,12 +43,7 @@
   --font-body: "manifold", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
-.navbar{
-    font-family: "manifold", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.navbar .brand { font-weight: 700; }
-.navbar .nav-link { font-weight: 500; }
